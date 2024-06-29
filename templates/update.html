@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form action="" method="POST">
+  <div class="mb-1">
+    <input type="text" placeholder="Name" value="{{data.name}}" class="form-control" id="name" name="name"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <input type="text" placeholder="Company Name" value="{{data.company_name}}" class="form-control" id="company_name"
+      name="company_name" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <input type="text" placeholder="Linkedin" value="{{data.linkedin}}" class="form-control" id="linkedin"
+      name="linkedin" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <input type="email" placeholder="Email" value="{{data.email}}" class="form-control" id="email" name="email"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <input type="text" placeholder="Phone Number" value="{{data.phone}}" class="form-control" name="phone" id="phone">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- <div class="row">
+  <div class="col-sm-3  mb-1 mb-sm-0">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Create</h5>
+         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
+        <a href="/create" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3  mb-1 mb-sm-0">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Read</h5>
+ <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3  mb-1 mb-sm-0">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Update</h5>
+        \<p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 ">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Delete</h5>
+       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> 
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+<form action="" method="POST">
+  <div class="mb-1">
+    <!-- <label for="name" class="form-label">Name</label> -->
+    <input type="text" placeholder="Name" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <!-- <label for="company_name" class="form-label">Company Name</label> -->
+    <input type="text" placeholder="Company Name" class="form-control" id="company_name" name="company_name"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <!-- <label for="linkedin" class="form-label">Linkedin</label> -->
+    <input type="text" placeholder="Linkedin" class="form-control" id="linkedin" name="linkedin"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <!-- <label for="email" class="form-label">Email address</label> -->
+    <input type="email" placeholder="Email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-1">
+    <!-- <label for="phone" class="form-label">Phone Number</label> -->
+    <input type="text" placeholder="Phone Number" class="form-control" name="phone" id="phone">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">SNo</th>
+      <th scope="col">Name</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">Linkedin</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col bg-danger"></th>
+      <th scope="col bg-warning"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in dataall %}
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>{{data.name}}</td>
+      <td>{{data.company_name}}</td>
+      <td>{{data.linkedin}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.phone}}</td>
+      <td class="bg-danger text-white"><a class="text-white" href="/delete/{{data.sno}}">Delete</a></td>
+      <td class="bg-warning text-white"><a class="text-white" href="/update/{{data.sno}}">Update</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
